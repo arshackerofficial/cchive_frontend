@@ -37,7 +37,7 @@ const Register = () => {
             <h1>Create your CC Hive Account</h1>
             {error && <p className="text-red-500">{error}</p>}
             <form onSubmit={handleSubmit}>
-                <input 
+                <input
                     placeholder="Email"
                     value={form.email}
                     type="email" 
