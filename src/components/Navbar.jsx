@@ -32,7 +32,6 @@ const Navbar = () => {
                     </>
                 )}
             </div>
-            {console.log(user)}
         </nav>
     )
 }
