@@ -16,7 +16,7 @@ const Navbar = () => {
             <div className="flex gap-5">
                 {user ? (
                     <>
-                        <span className="pr-5 ">Welcome, {user.first_name}</span>
+                        <span className="pr-5 ">Welcome, @<span className="text-green-500 text-xl md:font-bold">{user.username}</span></span>
                         <Link to='/feed'>Feed</Link>
                         <Link to='/home'>Home</Link>
                         <Link to='/marketplace'>Marketplace</Link>

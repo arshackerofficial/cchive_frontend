@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-import Login from "../pages/login";
-import Feed from "../pages/feed";
-import Home from "../pages/home";
+import Login from "../pages/Login";
+import Feed from "../pages/Feed";
+import Home from "../pages/Home";
 import Register from "../pages/Register";
 
 const AppRoutes = () => {
