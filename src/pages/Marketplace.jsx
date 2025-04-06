@@ -1,10 +1,24 @@
 import {useListings} from '../hooks/useListings';
+import CreateListingForm from '../components/CreateListingForm';
+import { useState } from 'react';
+
 
 const Marketplace = () => {
     const {data: listings, isLoading, error} = useListings();
+    const [showForm, setShowForm] = useState(false)
     return (
         <div>
             <h1>Marketplace</h1>
+
+            <button
+                onClick={() => setShowForm(!showForm)}
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                >
+                {showForm ? 'Cancel' : 'Create Listing'}
+            </button>
+            {showForm && <CreateListingForm onSuccess={() => setShowForm(false)} />}
+
+
             {isLoading && <p>Loading Listings...</p>}
             {error && <p>Failed to load Listings.</p>}
 
