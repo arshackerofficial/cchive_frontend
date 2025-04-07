@@ -12,12 +12,9 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white border-b border-gray-200 shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-      {/* Left - Logo */}
       <Link to="/home" className="text-2xl font-bold text-primary hover:opacity-80">
         📚 CCHive
       </Link>
-
-      {/* Right - Links */}
       <div className="flex items-center gap-6 text-sm md:text-base">
         {user ? (
           <>

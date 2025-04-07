@@ -6,7 +6,7 @@ export default function Home() {
   const { data: users = [] } = useQuery({
     queryKey: ['users'],
     queryFn: () =>
-      fetch('http://localhost:3000/api/v1/users') // adjust as needed
+      fetch('http://localhost:3000/api/v1/users')
         .then((res) => res.json()),
   });
 
@@ -17,7 +17,6 @@ export default function Home() {
 
   return (
     <div className="bg-background min-h-screen text-gray-800 p-6">
-      {/* Hero */}
       <section className="text-center py-12">
         <h1 className="text-4xl font-bold text-primary mb-4">Get Connected.</h1>
         <p className="text-muted mb-6">Search if your friends are here:</p>
