@@ -15,6 +15,7 @@ import RequestTutor from '../pages/RequestTutor';
 import StudyGroups from '../pages/StudyGroups';
 import StudyGroupChat from '../pages/StudyGroupChat';
 import PrivateRoute from "../components/PrivateRoute";
+import UserProfile from "../pages/UserProfile";
 
 const AppRoutes = () => {
   const { user } = useAuth();
@@ -105,6 +106,14 @@ const AppRoutes = () => {
           </PrivateRoute>
         }
       />
+      <Route 
+        path="/user/:username" 
+        element={
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>
+          }
+        />
     </Routes>
   );
 };

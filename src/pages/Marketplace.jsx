@@ -1,6 +1,7 @@
 import { useListings } from '../hooks/useListings';
 import CreateListingForm from '../components/CreateListingForm';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Marketplace = () => {
   const { data: listings, isLoading, error } = useListings();
@@ -37,7 +38,8 @@ const Marketplace = () => {
               {listing.title}
             </h3>
             <p className="text-gray-700 mb-2">{listing.description}</p>
-            <p>Sold by: {listing.seller}</p>
+            <p>Sold by:             <Link to={`/user/${listing.seller_id}`} className="text-blue-600 hover:underline">{listing.seller}</Link>
+            </p>
             <p className="text-lg font-semibold text-green-600">
               ${parseFloat(listing.price).toFixed(2)}
             </p>
