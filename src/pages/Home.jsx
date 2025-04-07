@@ -36,7 +36,7 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-12 ml-22 mr-22">
         <Feature
           title="Marketplace"
           desc="Buy and sell books, gear, and more."
