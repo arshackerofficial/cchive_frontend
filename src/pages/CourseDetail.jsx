@@ -21,7 +21,10 @@ const CourseDetail = () => {
     return (
         <div className="max-w-3xl mx-auto px-4 py-10">
           <h1 className="text-3xl font-bold text-primary mb-2">{course.title}</h1>
-          <p className="text-gray-600 mb-6">{course.description}</p>
+          <p className="text-gray-600">{course.description}</p>
+          <p className="text-gray-400">{course.subject+" "+course.course_number}</p>
+          <p className="text-gray-400">Credits: {course.credits}</p>
+          <p className="text-gray-400 mb-6">Average Rating: {course.avg_rating}</p>
       
           <ReviewForm reviewableType="Course" reviewableId={id} />
           <ReviewList reviewableType="Course" reviewableId={id} />
