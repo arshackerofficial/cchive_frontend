@@ -11,7 +11,6 @@ const StudyGroupChat = () => {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    // Fetch existing messages
     const fetchMessages = async () => {
       const res = await api.get(`/study_groups/${studyGroupId}/messages`);
       setMessages(res.data);
