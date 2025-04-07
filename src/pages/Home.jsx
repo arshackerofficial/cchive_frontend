@@ -1,40 +1,73 @@
-// src/pages/Home.jsx
-
+import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+export default function Home() {
+  const { data: users = [] } = useQuery({
+    queryKey: ['users'],
+    queryFn: () =>
+      fetch('http://localhost:3000/api/v1/users') // adjust as needed
+        .then((res) => res.json()),
+  });
+
+  const [query, setQuery] = useState('');
+  const filtered = users.filter((u) =>
+    u.username.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
-    <div className="max-w-4xl mx-auto py-16 px-4 text-center">
-      <h1 className="text-4xl font-extrabold mb-4 text-blue-700">
-        Welcome to CCHive 🐝
-      </h1>
-      <p className="text-lg text-gray-700 mb-8">
-        Your one-stop platform for connecting with fellow students—buy and sell stuff, join study groups, get tutoring help, and leave reviews on courses and instructors.
-      </p>
+    <div className="bg-background min-h-screen text-gray-800 p-6">
+      {/* Hero */}
+      <section className="text-center py-12">
+        <h1 className="text-4xl font-bold text-primary mb-4">Get Connected</h1>
+        <p className="text-muted mb-6">Search if your friends are here:</p>
+        <input
+          type="text"
+          placeholder="Search by username"
+          className="w-full max-w-md px-4 py-2 border border-muted rounded"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <ul className="mt-4 space-y-2 max-w-md mx-auto">
+          {filtered.map((user) => (
+            <li key={user.id} className="bg-white p-3 rounded shadow text-left">
+              {user.first_name} {user.last_name} <span className="text-muted text-sm">(@{user.username})</span>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-        <Feature icon="🛒" title="Marketplace" desc="Buy and sell notes, books, and other student essentials." />
-        <Feature icon="📚" title="Study Groups" desc="Join or create groups for collaborative learning." />
-        <Feature icon="🎓" title="Peer Tutoring" desc="Find student tutors by subject and book appointments." />
-        <Feature icon="⭐" title="Reviews" desc="Review instructors and courses to help others pick wisely." />
-      </div>
-
-      <Link
-        to="/register"
-        className="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
-      >
-        Join CCHive Now
-      </Link>
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <Feature
+          title="Marketplace"
+          desc="Buy and sell books, gear, and more."
+          to="/marketplace"
+        />
+        <Feature
+          title="Study Groups"
+          desc="Chat, share files, stay organized."
+          to="/study_groups"
+        />
+        <Feature
+          title="Peer Tutoring"
+          desc="Find and offer tutoring help."
+          to="/tutoring/request"
+        />
+        <Feature
+          title="Course Reviews"
+          desc="Leave reviews for instructors and courses."
+          to="/courses"
+        />
+      </section>
     </div>
   );
-};
+}
 
-const Feature = ({ icon, title, desc }) => (
-  <div className="border p-6 rounded shadow-sm text-left hover:shadow-md transition">
-    <div className="text-3xl mb-2">{icon}</div>
-    <h3 className="text-xl font-semibold">{title}</h3>
-    <p className="text-gray-600">{desc}</p>
-  </div>
-);
-
-export default Home;
+function Feature({ title, desc, to }) {
+  return (
+    <Link to={to} className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h3 className="text-xl font-semibold text-primary">{title}</h3>
+      <p className="text-sm text-muted mt-1">{desc}</p>
+    </Link>
+  );
+}
