@@ -5,8 +5,7 @@ const Feed = () => {
     const {user} = useAuth();
     return (
         <div>
-            <h1>Hi, {user.first_name}</h1>
-            <p>Welcome back to CC Hive</p>
+            <h1>{user.first_name}'s Feed</h1>
             <div className="flex flex-col gap-10 p-7">
                 <Card
                 title="Browse Marketplace"

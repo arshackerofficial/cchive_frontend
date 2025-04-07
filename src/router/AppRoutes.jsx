@@ -37,7 +37,7 @@ const AppRoutes = () => {
             <Route path="/tutoring" element={<TutorProfileSetup />} />
             <Route path="/tutoring/request" element={<RequestTutor />} />
             <Route path="/study_groups" element={<StudyGroups />} />
-            <Route path="/study_groups/:id" element={<StudyGroupChat />} />
+            a<Route path="/study_groups/:id" element={<StudyGroupChat />} />
         </Routes>
     );
 };
