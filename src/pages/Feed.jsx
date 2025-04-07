@@ -16,17 +16,17 @@ const Feed = () => {
                 <Card
                 title="Join Study Groups"
                 desc="Connect, chat, and collaborate"
-                to="/study-groups"
+                to="/study_groups"
                 />
                 <Card
                 title="Book a Tutor"
                 desc="Find help from your peers"
-                to="/appointments"
+                to="/tutoring/request"
                 />
                 <Card
                 title="Leave a Review"
                 desc="Share your course and instructor experiences"
-                to="/reviews"
+                to="/courses"
                 />
 
             </div>
