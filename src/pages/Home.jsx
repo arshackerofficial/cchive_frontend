@@ -19,7 +19,7 @@ export default function Home() {
     <div className="bg-background min-h-screen text-gray-800 p-6">
       {/* Hero */}
       <section className="text-center py-12">
-        <h1 className="text-4xl font-bold text-primary mb-4">Get Connected</h1>
+        <h1 className="text-4xl font-bold text-primary mb-4">Get Connected.</h1>
         <p className="text-muted mb-6">Search if your friends are here:</p>
         <input
           type="text"
@@ -30,7 +30,7 @@ export default function Home() {
         />
         <ul className="mt-4 space-y-2 max-w-md mx-auto">
           {filtered.map((user) => (
-            <li key={user.id} className="bg-white p-3 rounded shadow text-left">
+            <li key={user.username} className="bg-white p-3 rounded shadow text-left">
               {user.first_name} {user.last_name} <span className="text-muted text-sm">(@{user.username})</span>
             </li>
           ))}
