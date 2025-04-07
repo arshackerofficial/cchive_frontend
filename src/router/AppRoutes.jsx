@@ -13,6 +13,8 @@ import Instructors from '../pages/Instructors';
 import TutorProfileSetup from '../pages/TutorProfileSetup';
 import RequestTutor from '../pages/RequestTutor';
 import StudyGroups from '../pages/StudyGroups';
+import StudyGroupChat from '../pages/StudyGroupChat';
+
 
 
 
@@ -35,6 +37,7 @@ const AppRoutes = () => {
             <Route path="/tutoring" element={<TutorProfileSetup />} />
             <Route path="/tutoring/request" element={<RequestTutor />} />
             <Route path="/study_groups" element={<StudyGroups />} />
+            <Route path="/study_groups/:id" element={<StudyGroupChat />} />
         </Routes>
     );
 };
