@@ -26,6 +26,8 @@ const Navbar = () => {
             <Link to="/study_groups" className="hover:text-primary transition">Study Groups</Link>
             <Link to="/courses" className="hover:text-primary transition">Courses</Link>
             <Link to="/instructors" className="hover:text-primary transition">Instructors</Link>
+            <Link to="/tutoring" className="hover:text-primary transition">Tutor</Link>
+            <Link to="/tutoring/request" className="hover:text-primary transition">Get Tutored</Link>
             <button
               onClick={handleLogout}
               className="bg-accent text-white border px-3 py-1 rounded hover:bg-red-200 hover:text-red-700 hover:border-red-700 transition"
