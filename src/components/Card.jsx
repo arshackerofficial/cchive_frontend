@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const Card = ({ title, desc, to }) => (
-    <Link
-      to={to}
-      className="border p-6 rounded shadow hover:shadow-md transition block"
+const Card = ({ title, desc, to }) => {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.03 }}
+      className="border rounded-lg p-6 shadow hover:shadow-lg transition bg-white"
     >
-      <h3 className="text-xl font-semibold mb-2 text-blue-600">{title}</h3>
-      <p className="text-gray-600">{desc}</p>
-    </Link>
+      <Link to={to}>
+        <h2 className="text-xl font-bold text-primary">{title}</h2>
+        <p className="text-gray-600 mt-1">{desc}</p>
+      </Link>
+    </motion.div>
   );
-  
+};
+
 export default Card;
