@@ -10,6 +10,8 @@ import CourseDetail from '../pages/CourseDetail';
 import InstructorDetail from '../pages/InstructorDetail';
 import Courses from '../pages/Courses';
 import Instructors from '../pages/Instructors';
+import TutorProfileSetup from '../pages/TutorProfileSetup';
+
 
 const AppRoutes = () => {
     const {user} = useAuth();
@@ -26,6 +28,7 @@ const AppRoutes = () => {
             <Route path="/instructors" element={<Instructors />} />
             <Route path="/courses/:id" element={<CourseDetail />} />
             <Route path="/instructors/:id" element={<InstructorDetail />} />
+            <Route path="/tutoring" element={<TutorProfileSetup />} />
         </Routes>
     );
 };

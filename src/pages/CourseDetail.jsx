@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import api from "../lib/api";
 import ReviewForm from "../components/ReviewForm";
+import ReviewList from '../components/ReviewList';
 
 const CourseDetail = () => {
     const {id} = useParams();
@@ -24,6 +25,8 @@ const CourseDetail = () => {
             <p>{course.description}</p>
 
             <ReviewForm reviewableType="Course" reviewableId={id} />
+            <ReviewList reviewableType="Course" reviewableId={id} />
+
         </div>
     );
 };
