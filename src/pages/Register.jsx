@@ -12,7 +12,6 @@ const Register = () => {
     first_name: '',
     last_name: '',
     bio: '',
-    username: '',
   });
   const [error, setError] = useState('');
 
@@ -28,8 +27,7 @@ const Register = () => {
         form.password,
         form.first_name,
         form.last_name,
-        form.bio,
-        form.username
+        form.bio
       );
       navigate('/feed');
     } catch (err) {
@@ -52,25 +50,13 @@ const Register = () => {
         )}
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
+          <div className="col-span-2">
             <label className="text-sm text-muted block mb-1">Email</label>
             <input
               type="email"
               placeholder="you@example.com"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="text-sm text-muted block mb-1">Username</label>
-            <input
-              type="text"
-              placeholder="yourusername"
-              value={form.username}
-              onChange={(e) => setForm({ ...form, username: e.target.value })}
               className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
               required
             />
