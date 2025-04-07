@@ -9,7 +9,7 @@ const InstructorDetail = () => {
     const {data: instructor, isLoading, error} = useQuery({
         queryKey: ['instructor', id],
         queryFn: async () => {
-            const res = await api.get(`/instructos/${id}`);
+            const res = await api.get(`/instructors/${id}`);
             return res.data;
         },
         enabled: !!id,
