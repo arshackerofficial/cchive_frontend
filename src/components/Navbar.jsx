@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import logo from '../assets/logo.png'; 
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -11,9 +12,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-      <Link to="/home" className="text-2xl font-bold text-primary hover:opacity-80">
-        📚 CCHive
+    <nav className="bg-white border-b border-gray-200 shadow-md px-6 py-2 flex justify-between items-center sticky top-0 z-50">
+      <Link to="/home" className="flex items-center gap-2">
+        <img src={logo} alt="CCHive logo" className="h-15 w-15 object-contain" />
+        <span className="font-bold text-xl text-primary">CCHive</span>
       </Link>
       <div className="flex items-center gap-6 text-sm md:text-base">
         {user ? (

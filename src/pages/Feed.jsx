@@ -5,7 +5,7 @@ const Feed = () => {
     const {user} = useAuth();
     return (
         <div>
-            <h1>{user.first_name}'s Feed</h1>
+            <h1 className="text-center pt-7 text-2xl font-bold" >{user.first_name}'s Feed</h1>
             <div className="flex flex-col gap-10 p-7">
                 <Card
                 title="Browse Marketplace"

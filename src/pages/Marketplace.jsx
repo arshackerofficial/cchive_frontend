@@ -20,7 +20,7 @@ const Marketplace = () => {
       </div>
 
       {showForm && (
-        <div className="mb-8">
+        <div className="mb-8 px-16">
           <CreateListingForm onSuccess={() => setShowForm(false)} />
         </div>
       )}

@@ -24,10 +24,17 @@ const CreateListingForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         mutation.mutate(form);
+        setForm(
+            {
+                title: '',
+                description: '',
+                price: '',
+            }
+        );
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3 border-2 border-accent rounded px-5 py-9">
             <h2>Create New Listing</h2>
 
             <input
