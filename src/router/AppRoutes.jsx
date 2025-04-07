@@ -12,6 +12,8 @@ import Courses from '../pages/Courses';
 import Instructors from '../pages/Instructors';
 import TutorProfileSetup from '../pages/TutorProfileSetup';
 import RequestTutor from '../pages/RequestTutor';
+import StudyGroups from '../pages/StudyGroups';
+
 
 
 
@@ -32,6 +34,7 @@ const AppRoutes = () => {
             <Route path="/instructors/:id" element={<InstructorDetail />} />
             <Route path="/tutoring" element={<TutorProfileSetup />} />
             <Route path="/tutoring/request" element={<RequestTutor />} />
+            <Route path="/study_groups" element={<StudyGroups />} />
         </Routes>
     );
 };
