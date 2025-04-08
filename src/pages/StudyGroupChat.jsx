@@ -64,7 +64,7 @@ const StudyGroupChat = () => {
       <div className="h-80 overflow-y-auto mb-4 border rounded p-2 bg-gray-50">
         {messages.map((msg, i) => (
           <div key={i} className="mb-2">
-            <span className="font-semibold text-blue-700">{msg.username}</span>:{' '}
+            <span className="font-semibold text-blue-700">{msg.full_name}</span>:{' '}
             <span className="text-gray-800">{msg.message || msg.content}</span>
             {msg.created_at && (
               <span className="text-xs text-gray-500 ml-2">

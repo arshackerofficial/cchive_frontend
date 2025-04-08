@@ -15,13 +15,13 @@ const Navbar = () => {
     <nav className="bg-white border-b border-gray-200 shadow-md px-6 py-2 flex justify-between items-center sticky top-0 z-50">
       <Link to="/home" className="flex items-center gap-2">
         <img src={logo} alt="CCHive logo" className="h-15 w-15 object-contain" />
-        <span className="font-bold text-xl text-primary">CCHive</span>
+        <span className="font-bold text-xl text-primary hover:text-accent">CCHive</span>
       </Link>
       <div className="flex items-center gap-6 text-sm md:text-base">
         {user ? (
           <>
             <span className="text-muted hidden sm:inline">
-              Welcome, <span className="text-primary font-semibold">@{user.username}</span>
+              Welcome, <span className="text-primary font-semibold">{user.first_name + " "+user.last_name}</span>
             </span>
             <Link to="/feed" className="hover:text-primary transition">Feed</Link>
             <Link to="/marketplace" className="hover:text-primary transition">Marketplace</Link>
