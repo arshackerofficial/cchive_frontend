@@ -2,7 +2,7 @@ import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import api from "../lib/api";
 
-const CreateListingForm = () => {
+const CreateListingForm = ({ onSuccess }) => {
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -17,6 +17,7 @@ const CreateListingForm = () => {
       return res.data;
     },
     onSuccess: () => {
+      onSuccess();
       queryClient.invalidateQueries({ queryKey: ["listings"] });
     },
   });
