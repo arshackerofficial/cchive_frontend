@@ -54,7 +54,7 @@ const Instructors = () => {
       </div>
 
       {isLoading && (
-        <div className="text-center text-blue-500 text-lg font-medium">
+        <div className="text-center text-primary text-lg font-medium">
           Loading instructors...
         </div>
       )}

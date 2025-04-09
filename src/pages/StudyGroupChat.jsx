@@ -64,8 +64,7 @@ const StudyGroupChat = () => {
       <div className="h-80 overflow-y-auto mb-4 border rounded p-2 bg-gray-50">
         {messages.map((msg, i) => (
           <div key={i} className="mb-2">
-            <span className="font-semibold text-blue-700">{msg.full_name}</span>
-            :{" "}
+            <span className="font-semibold text-primary">{msg.full_name}</span>:{" "}
             <span className="text-gray-800">{msg.message || msg.content}</span>
             {msg.created_at && (
               <span className="text-xs text-gray-500 ml-2">
@@ -85,7 +84,7 @@ const StudyGroupChat = () => {
           placeholder="Type your message..."
           className="flex-1 p-2 border rounded"
         />
-        <button className="bg-blue-600 text-white px-4 rounded hover:bg-blue-700">
+        <button className="bg-primary text-white px-4 rounded hover:bg-secondary">
           Send
         </button>
       </form>

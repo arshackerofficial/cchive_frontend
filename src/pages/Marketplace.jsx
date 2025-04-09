@@ -1,7 +1,7 @@
-import { useListings } from '../hooks/useListings';
-import CreateListingForm from '../components/CreateListingForm';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useListings } from "../hooks/useListings";
+import CreateListingForm from "../components/CreateListingForm";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Marketplace = () => {
   const { data: listings, isLoading, error } = useListings();
@@ -13,9 +13,9 @@ const Marketplace = () => {
         <h1 className="text-3xl font-bold text-primary">Marketplace</h1>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="bg-primary text-white px-4 py-2 rounded hover:bg-blue-800 transition"
+          className="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition"
         >
-          {showForm ? 'Cancel' : 'Create Listing'}
+          {showForm ? "Cancel" : "Create Listing"}
         </button>
       </div>
 
@@ -38,7 +38,14 @@ const Marketplace = () => {
               {listing.title}
             </h3>
             <p className="text-gray-700 mb-2">{listing.description}</p>
-            <p>Sold by:             <Link to={`/user/${listing.seller_id}`} className="text-blue-600 hover:underline">{listing.seller}</Link>
+            <p>
+              Sold by:{" "}
+              <Link
+                to={`/user/${listing.seller_id}`}
+                className="text-secondary hover:underline"
+              >
+                {listing.seller}
+              </Link>
             </p>
             <p className="text-lg font-semibold text-green-600">
               ${parseFloat(listing.price).toFixed(2)}

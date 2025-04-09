@@ -198,7 +198,7 @@ const ReviewForm = ({
 
         <button
           type="submit"
-          className="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition"
+          className="bg-primary text-white px-5 py-2 rounded hover:bg-secondary transition"
           disabled={isLoading}
         >
           {isLoading ? "Submitting..." : "Submit Review"}

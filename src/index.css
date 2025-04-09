@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
-@theme {
+/* @theme {
   --color-primary: #f6c514;
   --color-secondary: #3b82f6;
   --color-accent: #10b981;
   --color-danger: #ef4444;
   --color-muted: #6b7280;
   --color-background: #f9fafb;
+} */
+
+@theme {
+  --color-primary: #f6c514; /* Golden Yellow */
+  --color-secondary: #d4a514; /* Muted Goldenrod */
+  --color-accent: #fcd85f; /* Soft Butter Yellow */
+  --color-danger: #cc5b16; /* Burnt Orange */
+  --color-muted: #b39f6c; /* Warm Muted Beige */
+  --color-background: #fffdf6; /* Very light ivory */
 }
 
 body {

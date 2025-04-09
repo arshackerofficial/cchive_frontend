@@ -1,16 +1,20 @@
-import { useParams } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import api from '../lib/api';
+import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import api from "../lib/api";
 
 const UserProfile = () => {
   const { username } = useParams();
 
-  const { data: user, isLoading, error } = useQuery({
-    queryKey: ['user', username],
+  const {
+    data: user,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["user", username],
     queryFn: async () => {
       const res = await api.get(`/users/${username}`);
       return res.data;
-    }
+    },
   });
 
   if (isLoading) return <p>Loading user...</p>;
@@ -19,17 +23,20 @@ const UserProfile = () => {
   return (
     <div className="max-w-3xl mx-auto py-10 px-6">
       {console.log(user)}
-      <h1 className="text-3xl font-bold mb-2">{user.first_name} {user.last_name}</h1>
+      <h1 className="text-3xl font-bold mb-2">
+        {user.first_name} {user.last_name}
+      </h1>
       <p className="text-gray-500">@{user.username}</p>
       <p className="mt-4">{user.bio}</p>
-      <p>📧 Email &nbsp;
+      <p>
+        📧 Email &nbsp;
         <a
           href={`mailto:${user.email}`}
           className="inline-block mt-2 text-blue-500 hover:text-blue-700 underline"
-          >@{user.username}
+        >
+          @{user.username}
         </a>
       </p>
-
 
       {user.tutor_profile && (
         <div className="mt-6 p-4 border rounded bg-green-50">

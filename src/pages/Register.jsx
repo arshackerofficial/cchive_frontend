@@ -6,14 +6,14 @@ const Register = () => {
   const { register } = useAuth();
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    email: '',
-    password: '',
-    password_confirmation: '',
-    first_name: '',
-    last_name: '',
-    bio: '',
+    email: "",
+    password: "",
+    password_confirmation: "",
+    first_name: "",
+    last_name: "",
+    bio: "",
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,10 +29,10 @@ const Register = () => {
         form.last_name,
         form.bio
       );
-      navigate('/feed');
+      navigate("/feed");
     } catch (err) {
       console.log(err);
-      setError('Registration Failed. Try again.');
+      setError("Registration Failed. Try again.");
     }
   };
 
@@ -49,7 +49,10 @@ const Register = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 md:grid-cols-2 gap-4"
+        >
           <div className="col-span-2">
             <label className="text-sm text-muted block mb-1">Email</label>
             <input
@@ -99,19 +102,25 @@ const Register = () => {
           </div>
 
           <div>
-            <label className="text-sm text-muted block mb-1">Confirm Password</label>
+            <label className="text-sm text-muted block mb-1">
+              Confirm Password
+            </label>
             <input
               type="password"
               placeholder="••••••••"
               value={form.password_confirmation}
-              onChange={(e) => setForm({ ...form, password_confirmation: e.target.value })}
+              onChange={(e) =>
+                setForm({ ...form, password_confirmation: e.target.value })
+              }
               className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
               required
             />
           </div>
 
           <div className="md:col-span-2">
-            <label className="text-sm text-muted block mb-1">Bio (optional)</label>
+            <label className="text-sm text-muted block mb-1">
+              Bio (optional)
+            </label>
             <textarea
               placeholder="Tell us a little about yourself..."
               value={form.bio}
@@ -124,7 +133,7 @@ const Register = () => {
           <div className="md:col-span-2 mt-4">
             <button
               type="submit"
-              className="w-full bg-primary text-white py-2 rounded hover:bg-blue-800 transition"
+              className="w-full bg-primary text-white py-2 rounded hover:bg-secondary transition"
             >
               Sign Up
             </button>

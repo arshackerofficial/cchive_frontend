@@ -1,20 +1,26 @@
-import { useState } from 'react';
-import { useMyTutorProfile } from '../hooks/useMyTutorProfile';
-import { useCreateTutorProfile } from '../hooks/useCreateTutorProfile';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { useMyTutorProfile } from "../hooks/useMyTutorProfile";
+import { useCreateTutorProfile } from "../hooks/useCreateTutorProfile";
+import { Link } from "react-router-dom";
 
 const TutorProfileSetup = () => {
   const { data: profile, isLoading } = useMyTutorProfile();
-  const [subjects, setSubjects] = useState('');
+  const [subjects, setSubjects] = useState("");
   const { mutate, isLoading: creating, isError } = useCreateTutorProfile();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const subjectList = subjects.split(',').map((s) => s.trim()).filter(Boolean);
+    const subjectList = subjects
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
     mutate({ tutor_profile: { subjects: subjectList } });
   };
 
-  if (isLoading) return <p className="text-center py-10 text-muted">Loading profile status...</p>;
+  if (isLoading)
+    return (
+      <p className="text-center py-10 text-muted">Loading profile status...</p>
+    );
 
   if (profile) {
     return (
@@ -29,7 +35,7 @@ const TutorProfileSetup = () => {
 
         <Link
           to="/tutoring/request"
-          className="inline-block bg-primary text-white px-4 py-2 rounded hover:bg-blue-800 transition"
+          className="inline-block bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition"
         >
           Need Tutoring Instead?
         </Link>
@@ -54,12 +60,14 @@ const TutorProfileSetup = () => {
         </label>
         <button
           type="submit"
-          className="bg-primary text-white px-4 py-2 rounded hover:bg-blue-800 transition"
+          className="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition"
           disabled={creating}
         >
-          {creating ? 'Submitting...' : 'Create Tutor Profile'}
+          {creating ? "Submitting..." : "Create Tutor Profile"}
         </button>
-        {isError && <p className="text-red-500 text-sm">Something went wrong.</p>}
+        {isError && (
+          <p className="text-red-500 text-sm">Something went wrong.</p>
+        )}
       </form>
     </div>
   );
