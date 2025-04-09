@@ -17,6 +17,7 @@ import StudyGroupChat from "../pages/StudyGroupChat";
 import PrivateRoute from "../components/PrivateRoute";
 import UserProfile from "../pages/UserProfile";
 import ReviewsPage from "../pages/ReviewsPage";
+import PeerTutoring from "../pages/PeerTutoring";
 
 const AppRoutes = () => {
   const { user } = useAuth();
@@ -87,6 +88,14 @@ const AppRoutes = () => {
         element={
           <PrivateRoute>
             <InstructorDetail />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/peer-tutoring"
+        element={
+          <PrivateRoute>
+            <PeerTutoring />
           </PrivateRoute>
         }
       />

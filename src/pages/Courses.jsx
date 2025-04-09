@@ -89,7 +89,7 @@ const Courses = () => {
 
       {/* States */}
       {isLoading && (
-        <p className="text-center text-blue-500 text-lg font-medium">
+        <p className="text-center text-primary text-lg font-medium">
           Loading courses...
         </p>
       )}

@@ -47,7 +47,7 @@ const Navbar = () => {
               </li>
               |
               <li>
-                <Link to="/tutoring/request">GET TUTORED</Link>
+                <Link to="/peer-tutoring">PEER TUTORS</Link>
               </li>
               {/* |
               <li>

@@ -194,7 +194,8 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link to="/tutoring/request">
+          {/* <Link to="/tutoring/request"> */}
+          <Link to="/peer-tutoring">
             <div className={styles["feature-card"]}>
               <div className={styles["feature-image-wrap"]}>
                 <img
@@ -210,7 +211,7 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link to="/courses">
+          <Link to="/reviews">
             <div className={styles["feature-card"]}>
               <div className={styles["feature-image-wrap"]}>
                 <img

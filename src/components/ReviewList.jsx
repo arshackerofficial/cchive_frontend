@@ -38,7 +38,7 @@
 
 import { useReviews } from "../hooks/useReviews";
 
-const parseReviewContent = (content) => {
+const parseReviewContent = (content, reviewableType) => {
   const lines = content
     .split("\n")
     .map((line) => line.trim())
@@ -59,6 +59,10 @@ const parseReviewContent = (content) => {
       fields.term = line.replace("Term:", "").trim();
     else if (line.startsWith("Review:")) {
       // fields.body = lines.slice(index + 1).join("\n");
+      //   fields.body =
+      //     reviewableType == "Course"
+      //       ? line.replace("Review:", "").trim()
+      //       : lines.slice(index + 1).join("\n");
       fields.body = line.replace("Review:", "").trim();
     }
   });
@@ -90,7 +94,8 @@ const ReviewList = ({ reviewableType, reviewableId }) => {
       <div className="space-y-6">
         {reviews.map((review) => {
           const { course, instructor, term, body } = parseReviewContent(
-            review.content
+            review.content,
+            reviewableType
           );
 
           return (
