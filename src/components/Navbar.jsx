@@ -49,13 +49,13 @@ const Navbar = () => {
               <li>
                 <Link to="/tutoring/request">GET TUTORED</Link>
               </li>
-              |
+              {/* |
               <li>
                 <Link to="/courses">COURSES</Link>
-              </li>
+              </li> */}
               |
               <li>
-                <Link to="/instructors">INSTRUCTORS</Link>
+                <Link to="/reviews">REVIEWS</Link>
               </li>
               {/* |
               <li>

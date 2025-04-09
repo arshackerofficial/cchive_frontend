@@ -1,0 +1,126 @@
+.pageWrapper {
+  padding-left: 10rem;
+  padding-right: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #f9fafb;
+}
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f6c514;
+}
+
+.pageSubtitle {
+  font-size: 1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.optionsSection {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.optionCard {
+  background-color: white;
+  padding: 2rem;
+  width: 18rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.optionCard:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.cardImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #f6c514;
+  margin-bottom: 0.5rem;
+}
+
+.cardText {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.cardButton,
+.cardButtonOutline {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.cardButton {
+  background-color: #f6c514;
+  color: white;
+  border: 2px solid #f6c514;
+}
+
+.cardButton:hover {
+  background-color: white;
+  color: #000;
+}
+
+.cardButtonOutline {
+  background-color: white;
+  color: #f6c514;
+  border: 2px solid #f6c514;
+}
+
+.cardButtonOutline:hover {
+  background-color: #f6c514;
+  color: white;
+}
+
+.infoSection {
+  background-color: white;
+  padding: 2rem;
+  border-left: 6px solid #f6c514;
+  border-radius: 0.5rem;
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.infoList {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #444;
+}
+
+.infoList li {
+  margin-bottom: 0.5rem;
+}

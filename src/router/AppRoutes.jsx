@@ -6,16 +6,17 @@ import Feed from "../pages/Feed";
 import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Marketplace from "../pages/Marketplace";
-import CourseDetail from '../pages/CourseDetail';
-import InstructorDetail from '../pages/InstructorDetail';
-import Courses from '../pages/Courses';
-import Instructors from '../pages/Instructors';
-import TutorProfileSetup from '../pages/TutorProfileSetup';
-import RequestTutor from '../pages/RequestTutor';
-import StudyGroups from '../pages/StudyGroups';
-import StudyGroupChat from '../pages/StudyGroupChat';
+import CourseDetail from "../pages/CourseDetail";
+import InstructorDetail from "../pages/InstructorDetail";
+import Courses from "../pages/Courses";
+import Instructors from "../pages/Instructors";
+import TutorProfileSetup from "../pages/TutorProfileSetup";
+import RequestTutor from "../pages/RequestTutor";
+import StudyGroups from "../pages/StudyGroups";
+import StudyGroupChat from "../pages/StudyGroupChat";
 import PrivateRoute from "../components/PrivateRoute";
 import UserProfile from "../pages/UserProfile";
+import ReviewsPage from "../pages/ReviewsPage";
 
 const AppRoutes = () => {
   const { user } = useAuth();
@@ -24,10 +25,17 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/login" element={!user ? <Login /> : <Navigate to="/feed" />}/>
-      <Route path="/register" element={!user ? <Register /> : <Navigate to="/feed" />}/>
+      <Route
+        path="/login"
+        element={!user ? <Login /> : <Navigate to="/feed" />}
+      />
+      <Route
+        path="/register"
+        element={!user ? <Register /> : <Navigate to="/feed" />}
+      />
 
-      <Route path="/feed"
+      <Route
+        path="/feed"
         element={
           <PrivateRoute>
             <Feed />
@@ -39,6 +47,14 @@ const AppRoutes = () => {
         element={
           <PrivateRoute>
             <Marketplace />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/reviews"
+        element={
+          <PrivateRoute>
+            <ReviewsPage />
           </PrivateRoute>
         }
       />
@@ -106,14 +122,14 @@ const AppRoutes = () => {
           </PrivateRoute>
         }
       />
-      <Route 
-        path="/user/:username" 
+      <Route
+        path="/user/:username"
         element={
           <PrivateRoute>
             <UserProfile />
           </PrivateRoute>
-          }
-        />
+        }
+      />
     </Routes>
   );
 };
