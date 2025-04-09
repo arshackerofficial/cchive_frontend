@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import logo from '../assets/logo.png'; 
+import logo from "../assets/cchive2.png";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -12,43 +13,71 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 shadow-md px-6 py-2 flex justify-between items-center sticky top-0 z-50">
-      <Link to="/home" className="flex items-center gap-2">
-        <img src={logo} alt="CCHive logo" className="h-15 w-15 object-contain" />
-        <span className="font-bold text-xl text-primary hover:text-accent">CCHive</span>
-      </Link>
-      <div className="flex items-center gap-6 text-sm md:text-base">
-        {user ? (
-          <>
-            <span className="text-muted hidden sm:inline">
-              Welcome, <span className="text-primary font-semibold">{user.first_name + " "+user.last_name}</span>
-            </span>
-            <Link to="/feed" className="hover:text-primary transition">Feed</Link>
-            <Link to="/marketplace" className="hover:text-primary transition">Marketplace</Link>
-            <Link to="/study_groups" className="hover:text-primary transition">Study Groups</Link>
-            <Link to="/courses" className="hover:text-primary transition">Courses</Link>
-            <Link to="/instructors" className="hover:text-primary transition">Instructors</Link>
-            <Link to="/tutoring" className="hover:text-primary transition">Tutor</Link>
-            <Link to="/tutoring/request" className="hover:text-primary transition">Get Tutored</Link>
-            <button
-              onClick={handleLogout}
-              className="bg-accent text-white border px-3 py-1 rounded hover:bg-red-200 hover:text-red-700 hover:border-red-700 transition"
-            >
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <Link to="/login" className="hover:text-primary">Login</Link>
-            <Link
-              to="/register"
-              className="bg-primary text-white px-3 py-1 rounded hover:bg-blue-800 transition"
-            >
-              Register
-            </Link>
-          </>
-        )}
+    <nav className={styles.header}>
+      <div className={styles["logo-section"]}>
+        <Link to="/home">
+          <img src={logo} className={styles["logo-box"]} />
+        </Link>
       </div>
+
+      {user ? (
+        <>
+          <div className={styles["navigation"]}>
+            <ul>
+              <li>
+                {" "}
+                <span className="text-muted hidden sm:inline">
+                  Welcome,{" "}
+                  <span className="text-primary font-semibold">
+                    {user.first_name + " " + user.last_name}
+                  </span>
+                </span>
+              </li>
+              |
+              <li>
+                <Link to="/home">HOME</Link>
+              </li>
+              |
+              <li>
+                <Link to="/study_groups">STUDY TOGETHER</Link>
+              </li>
+              |
+              <li>
+                <Link to="/marketplace">MARKETPLACE</Link>
+              </li>
+              |
+              <li>
+                <Link to="/tutoring/request">GET TUTORED</Link>
+              </li>
+              |
+              <li>
+                <Link to="/courses">COURSES</Link>
+              </li>
+              |
+              <li>
+                <Link to="/instructors">INSTRUCTORS</Link>
+              </li>
+              {/* |
+              <li>
+                <Link to="/instructors">INSTRUCTORS</Link>
+              </li> */}
+            </ul>
+          </div>
+
+          <button onClick={handleLogout} className={styles["login-button"]}>
+            Logout
+          </button>
+        </>
+      ) : (
+        <div className="flex gap-3">
+          <Link to="/login">
+            <button className={styles["login-button"]}>LOGIN</button>
+          </Link>
+          <Link to="/register">
+            <button className={styles["login-button"]}>SIGNUP</button>
+          </Link>
+        </div>
+      )}
     </nav>
   );
 };
