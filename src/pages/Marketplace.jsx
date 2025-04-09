@@ -31,6 +31,33 @@ const Marketplace = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-10 relative z-0">
+      {/* Hero Section */}
+      <div className="mb-12 text-center">
+        <h1 className="text-4xl font-bold text-primary mb-2">
+          Welcome to the Student Marketplace
+        </h1>
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          A platform built by students, for students — where you can easily buy,
+          sell, and discover course-related resources.
+        </p>
+      </div>
+
+      {/* Info Section */}
+      <div className="mb-12 bg-gray-50 border border-gray-200 p-6 rounded-xl shadow-sm">
+        <h2 className="text-2xl font-semibold text-primary mb-3">
+          Why use the Marketplace?
+        </h2>
+        <ul className="list-disc list-inside text-gray-700 space-y-2">
+          <li>
+            💼 Sell old textbooks, notes, or course supplies to other students.
+          </li>
+          <li>
+            📚 Buy resources you need at affordable prices from trusted peers.
+          </li>
+          <li>🧠 Support student learning and build community connections.</li>
+        </ul>
+      </div>
+
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold text-primary">Marketplace</h1>
         <button
