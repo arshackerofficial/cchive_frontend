@@ -57,7 +57,7 @@ const Courses = () => {
     <div className="max-w-6xl mx-auto py-10 px-4 min-h-[70vh]">
       <div className="mb-8 text-center">
         <h1 className="text-4xl font-bold mb-2 tracking-tight text-[#f6c514]">
-          Explore Our Courses 📚
+          Explore and Review Courses 📚
         </h1>
         <p className="text-gray-600 text-sm">
           Search by course name, number, or subject. Filter by department below.

@@ -68,7 +68,7 @@ export default function PeerTutoring() {
           Want to give back and strengthen your own understanding? Sign up to
           become a peer tutor!
         </p>
-        <Link to="/tutoring/signup" className={styles.btnSecondary}>
+        <Link to="/tutoring" className={styles.btnSecondary}>
           Sign Up
         </Link>
       </section>
