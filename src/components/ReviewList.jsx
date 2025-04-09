@@ -58,7 +58,8 @@ const parseReviewContent = (content) => {
     else if (line.startsWith("Term:"))
       fields.term = line.replace("Term:", "").trim();
     else if (line.startsWith("Review:")) {
-      fields.body = lines.slice(index + 1).join("\n");
+      // fields.body = lines.slice(index + 1).join("\n");
+      fields.body = line.replace("Review:", "").trim();
     }
   });
 
