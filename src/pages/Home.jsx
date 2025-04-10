@@ -48,8 +48,11 @@ export default function Home() {
   });
 
   const [query, setQuery] = useState("Search by Username");
-  const filtered = users.filter((u) =>
-    u.username.toLowerCase().includes(query.toLowerCase())
+  const filtered = users.filter(
+    (u) =>
+      u.username.toLowerCase().includes(query.toLowerCase()) ||
+      u.first_name.toLowerCase().includes(query.toLowerCase()) ||
+      u.last_name.toLowerCase().includes(query.toLowerCase())
   );
 
   return (
@@ -68,12 +71,12 @@ export default function Home() {
             tutors. Rate courses &amp; instructors.
           </p>
 
-          <div className={styles["hero-buttons"]}>
+          {/* <div className={styles["hero-buttons"]}>
             <button className={styles["btn-get-started"]}>Get Started</button>
             <button className={styles["btn-marketplace"]}>
               Browse Marketplace
             </button>
-          </div>
+          </div> */}
         </div>
 
         <div className={styles["hero-image"]}>

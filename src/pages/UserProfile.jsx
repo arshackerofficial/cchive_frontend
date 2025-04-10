@@ -114,11 +114,7 @@ const UserProfile = () => {
       <div className="flex flex-col md:flex-row items-center mb-8">
         {/* Placeholder or actual avatar if you have it */}
         <img
-          src={
-            "https://avatar.iran.liara.run/public/boy?username='" +
-            user.username +
-            "'"
-          }
+          src={"https://robohash.org/" + user.username + "?gravatar=yes"}
           alt="User avatar"
           className="w-20 h-20 rounded-full border border-gray-300 object-cover"
         />
