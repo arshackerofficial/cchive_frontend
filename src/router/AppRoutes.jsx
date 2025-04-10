@@ -28,11 +28,11 @@ const AppRoutes = () => {
       <Route path="/home" element={<Home />} />
       <Route
         path="/login"
-        element={!user ? <Login /> : <Navigate to="/feed" />}
+        element={!user ? <Login /> : <Navigate to="/home" />}
       />
       <Route
         path="/register"
-        element={!user ? <Register /> : <Navigate to="/feed" />}
+        element={!user ? <Register /> : <Navigate to="/home" />}
       />
 
       <Route
